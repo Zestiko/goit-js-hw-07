@@ -9,10 +9,17 @@ const { gallery,bigImage } = refs;
 // console.log(refs.gallery);
 
 const galleryItemsRefs = galleryItems.map(({preview, original, description}) => `
-    <a class="gallery__item" href="#">
-        <img class="gallery__image" src="${preview}" 
-        alt="${description}" data-source="${original}">
-    </a> `).join('');
+    <div class="gallery__item">
+    <a class="gallery__link" href="${original}">
+        <img
+        class="gallery__image"
+        src="${preview}" 
+        alt="${description}"
+        data-source="${original}"
+    />
+    </a>
+    </div> `)
+    .join('');
 // console.log(galleryItemsRefs)
 
 gallery.innerHTML = galleryItemsRefs;
