@@ -37,7 +37,12 @@ function onClickGallary(evt) {
     <img
      src="${evt.target.dataset.source}"
     alt="${evt.target.alt}">
-`);
+`, {
+        onClose: (bigImage) => {
+            window.removeEventListener('keydown', handelEscape);
+        }
+    })
+
 bigImage.show()
 
 function handelEscape(evt) {
@@ -45,19 +50,15 @@ function handelEscape(evt) {
         return
     }
     bigImage.close();
-    window.removeEventListener('keydown', handelEscape);
-    window.removeEventListener('mousedown', closeWindowOnClick);
+    
     console.log(evt.key)
 };
-function closeWindowOnClick(evt) {
-    window.removeEventListener('keydown', handelEscape);
-    window.removeEventListener('mousedown', closeWindowOnClick);
-    console.log(evt.button)
-};
 window.addEventListener('keydown', handelEscape);
-window.addEventListener('mousedown', closeWindowOnClick);
-    
 };
+
+
+    
+
 
 
 
