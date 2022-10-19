@@ -36,9 +36,7 @@ function onClickGallary(evt) {
     const bigImage = basicLightbox.create(`
     <img
      src="${evt.target.dataset.source}"
-    alt="${evt.target.alt}"
-        width="800"
-        height="600">
+    alt="${evt.target.alt}">
 `);
 bigImage.show()
 
