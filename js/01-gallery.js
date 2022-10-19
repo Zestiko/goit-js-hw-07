@@ -4,7 +4,7 @@ import { galleryItems } from './gallery-items.js';
 const refs = {
     gallery: document.querySelector('.gallery'),
 };
-const { gallery,bigImage } = refs;
+const { gallery} = refs;
 // console.log(galleryItems);
 // console.log(refs.gallery);
 
